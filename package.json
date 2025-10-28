@@ -1,0 +1,68 @@
+{
+  "name": "@sidra/n8n-nodes-amazon-paapi-extended",
+  "version": "1.0.0",
+  "description": "Enhanced n8n node for Amazon Product Advertising API (PA-API 5.0) with extended resource options including availability, pricing, and product details",
+  "keywords": [
+    "n8n-community-node-package",
+    "amazon",
+    "affiliate",
+    "paapi",
+    "pa-api",
+    "product-advertising",
+    "amazon-associates",
+    "e-commerce"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sidra/n8n-nodes-amazon-paapi-extended",
+  "author": {
+    "name": "Sidra",
+    "email": "your-email@example.com"
+  },
+  "contributors": [
+    {
+      "name": "Ofek",
+      "telegram": "@AppDev420"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sidra/n8n-nodes-amazon-paapi-extended.git"
+  },
+  "main": "nodes/AmazonPA/AmazonPA.node.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "lint": "eslint nodes credentials --ext .ts --fix",
+    "prepublishOnly": "npm run build && npm run lint",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lintfix": "eslint nodes credentials package.json --fix"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/AmazonPaApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/AmazonPA/AmazonPA.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^14.18.63",
+    "@types/request": "^2.48.8",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "eslint": "^8.10.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.3",
+    "n8n-workflow": "^0.147.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "amazon-paapi": "^1.0.7",
+    "gulp": "^5.0.0",
+    "path": "^0.12.7"
+  }
+}
